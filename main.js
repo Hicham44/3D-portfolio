@@ -30,6 +30,22 @@ scene.add(mainPlanet);
 
 mainPlanet.position.set(0,0,-20)
 
+// far off planet
+
+const farPlanetTexture = new THREE.TextureLoader().load('8k_jupiter_low.png');
+
+const farPlanet = new THREE.Mesh(
+  new THREE.SphereGeometry(10, 32, 32),
+  new THREE.MeshStandardMaterial({
+    map: farPlanetTexture
+  })
+);
+
+scene.add(farPlanet);
+
+farPlanet.position.z = -40;
+farPlanet.position.setX(-60);
+
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff);
@@ -40,9 +56,9 @@ scene.add(pointLight, ambientLight);
 
 // Helpers
 
-// const lightHelper = new THREE.PointLightHelper(pointLight)
-// const gridHelper = new THREE.GridHelper(200, 50);
-// scene.add(lightHelper, gridHelper)
+//const lightHelper = new THREE.PointLightHelper(pointLight)
+//const gridHelper = new THREE.GridHelper(200, 50);
+//scene.add(lightHelper, gridHelper)
 
 // const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -99,9 +115,9 @@ filip.position.x = 2;
 
 function moveCamera() {
   const t = document.body.getBoundingClientRect().top;
-  moon.rotation.x += 0.05;
-  moon.rotation.y += 0.075;
-  moon.rotation.z += 0.05;
+  moon.rotation.x += 0.005;
+  moon.rotation.y += 0.05;
+  moon.rotation.z += 0.005;
 
   filip.rotation.y += 0.01;
   filip.rotation.z += 0.01;
@@ -122,6 +138,10 @@ function animate() {
   mainPlanet.rotation.x += 0.01;
   mainPlanet.rotation.y += 0.005;
   mainPlanet.rotation.z += 0.01;
+
+  farPlanet.rotation.x += 0.01;
+  farPlanet.rotation.y += 0.005;
+  farPlanet.rotation.z += 0.01;
 
   moon.rotation.x += 0.005;
 
