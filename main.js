@@ -19,13 +19,16 @@ camera.position.setX(-3);
 
 renderer.render(scene, camera);
 
-// Torus
+// Main planet
 
-const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshStandardMaterial({ color: 0xff6347 });
-const torus = new THREE.Mesh(geometry, material);
+const geometry = new THREE.SphereGeometry(10, 24, 24);
+const mainPlanetTexture = new THREE.TextureLoader().load('filip.jpg');
+const material = new THREE.MeshBasicMaterial({ map: mainPlanetTexture });
+const mainPlanet = new THREE.Mesh(geometry, material);
 
-scene.add(torus);
+scene.add(mainPlanet);
+
+mainPlanet.position.set(0,0,-20)
 
 // Lights
 
@@ -116,9 +119,9 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.01;
+  mainPlanet.rotation.x += 0.01;
+  mainPlanet.rotation.y += 0.005;
+  mainPlanet.rotation.z += 0.01;
 
   moon.rotation.x += 0.005;
 
