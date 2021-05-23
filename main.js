@@ -139,9 +139,9 @@ function animate() {
   mainPlanet.rotation.y += 0.005;
   mainPlanet.rotation.z += 0.01;
 
-  farPlanet.rotation.x += 0.01;
-  farPlanet.rotation.y += 0.005;
-  farPlanet.rotation.z += 0.01;
+  farPlanet.rotation.x += 0.001;
+  farPlanet.rotation.y += 0.0005;
+  farPlanet.rotation.z += 0.001;
 
   moon.rotation.x += 0.005;
 
