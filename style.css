@@ -82,3 +82,19 @@ canvas {
   .left {
     grid-column: 6 / 12;
   }
+
+  #column-content {
+    display: inline-block;
+  }
+  img {
+    vertical-align: middle;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  /* for visual purposes */
+  #column-content {
+    position: relative;
+  }
