@@ -22,7 +22,7 @@ renderer.render(scene, camera);
 // Main planet
 
 const geometry = new THREE.SphereGeometry(10, 24, 24);
-const mainPlanetTexture = new THREE.TextureLoader().load('filip.jpg');
+const mainPlanetTexture = new THREE.TextureLoader().load('8k_earth.png');
 const material = new THREE.MeshBasicMaterial({ map: mainPlanetTexture });
 const mainPlanet = new THREE.Mesh(geometry, material);
 
@@ -32,7 +32,7 @@ mainPlanet.position.set(0,0,-20)
 
 // far off planet
 
-const farPlanetTexture = new THREE.TextureLoader().load('8k_jupiter_low.png');
+const farPlanetTexture = new THREE.TextureLoader().load('8k_jupiter_lower.png');
 
 const farPlanet = new THREE.Mesh(
   new THREE.SphereGeometry(10, 32, 32),
@@ -45,6 +45,8 @@ scene.add(farPlanet);
 
 farPlanet.position.z = -40;
 farPlanet.position.setX(-60);
+
+farPlanet.rotation.x = -0.15
 
 // Lights
 
@@ -135,13 +137,11 @@ moveCamera();
 function animate() {
   requestAnimationFrame(animate);
 
-  mainPlanet.rotation.x += 0.01;
-  mainPlanet.rotation.y += 0.005;
-  mainPlanet.rotation.z += 0.01;
+  //mainPlanet.rotation.x += 0.01;
+  mainPlanet.rotation.y += 0.0065;
+  //mainPlanet.rotation.z += 0.01;
 
-  farPlanet.rotation.x += 0.001;
-  farPlanet.rotation.y += 0.0005;
-  farPlanet.rotation.z += 0.001;
+  farPlanet.rotation.y += 0.001;
 
   moon.rotation.x += 0.005;
 
