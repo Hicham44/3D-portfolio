@@ -22,7 +22,7 @@ renderer.render(scene, camera);
 // Main planet
 
 const geometry = new THREE.SphereGeometry(10, 24, 24);
-const mainPlanetTexture = new THREE.TextureLoader().load('8k_earth.png');
+const mainPlanetTexture = new THREE.TextureLoader().load('./images/8k_earth.png');
 const material = new THREE.MeshBasicMaterial({ map: mainPlanetTexture });
 const mainPlanet = new THREE.Mesh(geometry, material);
 
@@ -32,7 +32,7 @@ mainPlanet.position.set(0,0,-20)
 
 // far off planet
 
-const farPlanetTexture = new THREE.TextureLoader().load('8k_jupiter_lower.png');
+const farPlanetTexture = new THREE.TextureLoader().load('./images/8k_jupiter_lower.png');
 
 const farPlanet = new THREE.Mesh(
   new THREE.SphereGeometry(10, 32, 32),
@@ -81,12 +81,12 @@ Array(200).fill().forEach(addStar);
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('space.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./images/space.jpg');
 scene.background = spaceTexture;
 
 // Avatar
 
-const filipTexture = new THREE.TextureLoader().load('filip.jpg');
+const filipTexture = new THREE.TextureLoader().load('./images/filip.jpg');
 
 const filip = new THREE.Mesh(new THREE.BoxGeometry(3, 3, 3), new THREE.MeshBasicMaterial({ map: filipTexture }));
 
@@ -94,8 +94,8 @@ scene.add(filip);
 
 // Moon
 
-const moonTexture = new THREE.TextureLoader().load('moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('./images/moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('./images/normal.jpg');
 
 const moon = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
