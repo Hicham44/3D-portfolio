@@ -6,6 +6,9 @@ canvas {
   left: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+  }
 
 :root {
   --dark-bg: rgba(15, 15, 15, 0.95);
